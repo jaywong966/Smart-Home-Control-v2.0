@@ -28,7 +28,7 @@ Unzip 3rdparty and model to project root path
 ```https://drive.google.com/file/d/1ma8e1EdU89hKlzfItkMzA88n3_eEFTRe/view?usp=sharing``` ---face_recognition package
 
 ```https://drive.google.com/file/d/1vfRpQ3feUDNvEzO1CtgvnvSKcgmyvphy/view?usp=sharing``` ---3rdparty and models
-## Reference
+## References
 https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
 https://github.com/ageitgey/face_recognition
