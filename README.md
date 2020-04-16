@@ -6,7 +6,7 @@ Update it later
 dlib, Cmake, boost, NumPy, sklearn
 
 ## Face Recognition Install
-The installation of face_recognition require dlib, Cmake and boost. You can install it by pip command (Not recommended) or use the package which in face_recognition folder.
+The installation of face_recognition require dlib, Cmake and boost. You can install it by using the package which in face_recognition folder.
 ### Install Cmake
 Install cmake-3.16.4-win64-x64.msi
  
@@ -24,7 +24,11 @@ Unzip boost_1_72_0.zip to any path you want
 ``` pip install face_recognition ```
 ## Required documents
 Unzip 3rdparty and model to project root path
-## Reference
+
+```https://drive.google.com/file/d/1ma8e1EdU89hKlzfItkMzA88n3_eEFTRe/view?usp=sharing``` ---face_recognition package
+
+```https://drive.google.com/file/d/1vfRpQ3feUDNvEzO1CtgvnvSKcgmyvphy/view?usp=sharing``` ---3rdparty and models
+## References
 https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
 https://github.com/ageitgey/face_recognition
