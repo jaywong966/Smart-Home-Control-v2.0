@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 import cv2
+import time
 from sklearn import svm
 
 
@@ -19,8 +20,8 @@ class HandModel():
     def __call__(self, hand, i):
         hand = self.data_process(hand, i)
         result = self.SVM.predict(hand)
-        result = self.idx_to_gesture[result[0]]
-        return result
+        probability = self.SVM.predict_proba(hand)
+        return result[0], probability
 
     def TrainSVMModel(self):
         # Prepare positive data
@@ -48,7 +49,7 @@ class HandModel():
             vector = np.delete(vector, 0, axis=0)
             vector = np.array(vector, dtype='float32')
             self.AllData = np.append(self.AllData, vector, axis=0)
-        SVM = svm.SVC(kernel='poly', gamma=10)
+        SVM = svm.SVC(kernel='poly', gamma=10, probability = True)
         SVM.fit(self.AllData, self.AllLabel)
         return SVM
 

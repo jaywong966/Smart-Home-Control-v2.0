@@ -5,22 +5,21 @@ import numpy as np
 class Facemodel():
     # Load a sample picture and learn how to recognize it.
     def __init__(self):
-        obama_image = face_recognition.load_image_file("obama.jpg")
+        obama_image = face_recognition.load_image_file("me.jpg")
         obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
         # Load a second sample picture and learn how to recognize it.
         biden_image = face_recognition.load_image_file("biden.jpg")
         biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
-
         # Create arrays of known face encodings and their names
         self.known_face_encodings = [
             obama_face_encoding,
-            biden_face_encoding,
+            biden_face_encoding
         ]
         self.known_face_names = [
-            "Barack Obama",
-            "Joe Biden",
+            "Wong Yuk Kit",
+            "Biden"
         ]
         self.face_locations = []
         self.face_encodings = []
@@ -39,6 +38,7 @@ class Facemodel():
             self.face_locations = face_recognition.face_locations(frame)
             self.face_encodings = face_recognition.face_encodings(frame, self.face_locations)
             name = "Unknown"
+            best_match_index = 6
             for face_encoding in self.face_encodings:
                 # See if the face is a match for the known face(s)
                 matches = face_recognition.compare_faces(self.known_face_encodings, face_encoding, tolerance=0.5)
@@ -48,7 +48,7 @@ class Facemodel():
                 if matches[best_match_index]:
                     name = self.known_face_names[best_match_index]
                 #face_names.append(name)
-        return name, face_rect
+        return best_match_index, face_rect
 
 
     def face_bbox(self, head, frame):
