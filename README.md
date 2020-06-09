@@ -1,6 +1,7 @@
 # Smart-Home-Control-v2.0
 ## Introduction
-Update it later
+Users can control the home appliance through different hand gestures by this program. Detailed project contents and installation tutorials are in the doc folder
+![image](https://github.com/jaywong966/Smart-Home-Control-v2.0/blob/master/capture.png)
 
 ## Dependence
 dlib, Cmake, boost, NumPy, sklearn
